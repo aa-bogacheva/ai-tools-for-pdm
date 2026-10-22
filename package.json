@@ -1,0 +1,13 @@
+{
+  "name": "kto-vygulivaet-borisa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Учебный micro-MVP: запись на прогулку с офисным псом Борисом и карточка последнего кормления",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

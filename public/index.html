@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кто выгуливает Бориса</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Handjet:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Пиксельный Борис: объявлен один раз, используется в шапке и в интро -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="pixel-dog" viewBox="0 0 13 9">
+      <path class="pixel-dog__body" d="M8 0h2v1h-2zM8 1h1v1h-1zM10 1h2v1h-2zM8 2h5v1h-5zM0 3h1v1h-1zM8 3h3v1h-3zM1 4h7v1h-7zM1 5h9v1h-9zM1 6h8v1h-8zM1 7h1v2h-1zM3 7h1v2h-1zM8 7h1v2h-1zM10 7h1v2h-1z"/>
+      <path class="pixel-dog__eye" d="M9 1h1v1h-1z"/>
+      <path class="pixel-dog__collar" d="M8 4h2v1h-2z"/>
+    </symbol>
+  </svg>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="./" aria-label="Дог.Яндекс, на&nbsp;главную">
+        <svg class="pixel-dog" width="39" height="27" aria-hidden="true"><use href="#pixel-dog"/></svg>
+        <span class="logo__text">Дог.Яндекс</span>
+      </a>
+      <span class="header__note">служба выгула Бориса</span>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section class="intro" aria-labelledby="intro-title">
+      <p class="intro__date">Сегодня&nbsp;— <time id="today-date">…</time></p>
+      <h1 id="intro-title" class="intro__title">Кто выгуливает сегодня Бориса?</h1>
+      <p class="intro__subtitle">Забронируйте свободное время сегодня и&nbsp;пройдитесь на&nbsp;свежем воздухе с&nbsp;Борей</p>
+      <div class="intro__dog" aria-hidden="true">
+        <svg class="pixel-dog" width="130" height="90"><use href="#pixel-dog"/></svg>
+      </div>
+    </section>
+
+    <section class="panel booking" aria-labelledby="booking-title">
+      <h2 id="booking-title" class="panel__title">Доступное время на&nbsp;сегодня</h2>
+      <p class="panel__hint">Выберите свободный слот, введите имя и&nbsp;фамилию, нажмите «Выбрать»</p>
+
+      <form id="booking-form" class="booking__form" novalidate>
+        <fieldset class="slots">
+          <legend class="visually-hidden">Слоты прогулок</legend>
+          <ul id="slot-list" class="slots__list">
+            <li class="slots__placeholder">Загружаем слоты…</li>
+          </ul>
+        </fieldset>
+
+        <label class="field">
+          <span class="visually-hidden">Ваши имя и&nbsp;фамилия</span>
+          <input id="booking-name" class="field__input" type="text" name="name"
+                 autocomplete="name" maxlength="100" placeholder="Ваши имя и фамилия">
+        </label>
+
+        <button id="booking-submit" class="button booking__submit" type="submit">Выбрать</button>
+        <p id="booking-message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel feeding" aria-labelledby="feeding-title">
+      <div class="feeding__info">
+        <h2 id="feeding-title" class="panel__title">Последнее кормление</h2>
+        <p class="feeding__line">
+          <time id="feeding-when" class="feeding__when">…</time><span id="feeding-sep" class="feeding__sep" aria-hidden="true" hidden>&nbsp;• </span><span id="feeding-who" class="feeding__who" hidden></span>
+        </p>
+      </div>
+      <form id="feeding-form" class="feeding__form" novalidate>
+        <label class="field feeding__field">
+          <span class="visually-hidden">Ваши имя и&nbsp;фамилия</span>
+          <input id="feeding-name" class="field__input" type="text" name="name"
+                 autocomplete="name" maxlength="100" placeholder="Ваши имя и фамилия">
+        </label>
+        <button id="feeding-submit" class="button button--secondary" type="submit">Покормили Бориса</button>
+        <p id="feeding-message" class="message feeding__message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">©&nbsp;<span id="footer-year">2026</span> Дог.Яндекс</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
